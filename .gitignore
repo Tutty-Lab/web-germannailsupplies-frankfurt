@@ -1,0 +1,16 @@
+# macOS archive cruft
+__MACOSX/
+.DS_Store
+._*
+
+# Editor / OS
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Never commit deploy credentials
+*.env
+.env*
+ftp-config*
+deploy-secrets*

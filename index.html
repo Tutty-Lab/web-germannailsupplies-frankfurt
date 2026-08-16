@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>German Nail Supplies · Frankfurt</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<meta name="description" content="German Nail Supplies (G.N.S), Großhändler für Zubehör, Kosmetik und Ausstattung rund um die Nagelpflege. Schnelle Lieferung in ganz Deutschland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0E76B5;        /* sea blue (primary) */
+  --green-d:#0B4F79;
+  --green-dd:#083A5A;
+  --orange:#F48241;
+  --ink:#182833;
+  --ink-2:#3f5563;
+  --muted:#6b8595;
+  --paper:#FFFFFF;
+  --sage:#EAF2F8;
+  --sage-2:#DBE8F2;
+  --line:#dbe4ec;
+  --font-head:'Poppins', sans-serif;
+  --font-body:'Roboto', Arial, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{color:var(--ink-2);font-family:var(--font-body);font-weight:400;font-size:1rem;line-height:1.7;
+  background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.2;font-weight:700}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+.eyebrow{font-family:var(--font-head);font-weight:600;font-size:.8rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green-d)}
+.section{padding:clamp(3.5rem,8vw,6rem) 0}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-head);font-weight:600;
+  font-size:.92rem;padding:.85rem 1.7rem;border-radius:8px;cursor:pointer;border:2px solid transparent;
+  transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green-d)}
+.btn-outline{border-color:var(--green);color:var(--green-d)}
+.btn-outline:hover{background:var(--green);color:#fff}
+.btn-white{background:#fff;color:var(--green-d)}
+.btn-white:hover{background:var(--sage)}
+
+/* ---------- TOP BAR ---------- */
+.topbar{background:var(--ink);color:#fff;font-size:.85rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:42px;flex-wrap:wrap}
+.topbar a{display:inline-flex;align-items:center;gap:.4rem;color:#fff;opacity:.9}
+.topbar a:hover{opacity:1;color:var(--green)}
+.topbar .tb-left{display:flex;gap:1.4rem;flex-wrap:wrap}
+.topbar svg{width:15px;height:15px;stroke:var(--green);fill:none;stroke-width:1.8}
+.topbar .tb-right{display:flex;gap:1rem;align-items:center}
+
+/* ---------- HEADER ---------- */
+.header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line);
+  transition:box-shadow .3s ease}
+.header.scrolled{box-shadow:0 6px 24px -16px rgba(0,0,0,.25)}
+.header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:70px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--font-head);font-weight:800;
+  font-size:1.35rem;color:var(--ink);letter-spacing:.02em}
+.logo .mark{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
+  background:var(--green);color:#fff;border-radius:9px;font-size:.86rem;font-weight:700;letter-spacing:.02em}
+.logo small{display:block;font-family:var(--font-body);font-weight:400;font-size:.62rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted)}
+.logo-img{height:46px;width:auto;display:block;border-radius:8px}
+.footer-logo-img{height:58px;border-radius:10px}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.4vw,2rem)}
+.nav a{font-family:var(--font-head);font-weight:500;font-size:.95rem;color:var(--ink)}
+.nav a:hover{color:var(--green-d)}
+.header-right{display:flex;align-items:center;gap:1rem}
+.lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.lang-switch button{border:0;background:#fff;cursor:pointer;font-family:var(--font-head);font-weight:600;
+  font-size:.76rem;padding:.35rem .6rem;color:var(--ink);transition:background .25s,color .25s}
+.lang-switch button.active{background:var(--green);color:#fff}
+@media(max-width:900px){.nav{display:none}.header .btn{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;color:#fff;overflow:hidden;background:#0b3a5a}
+.hero-slides{position:absolute;inset:0;z-index:0}
+.hslide{position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1.2s ease;transform:scale(1.04)}
+.hslide.is-active{opacity:1}
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(120deg,rgba(8,34,54,.9) 0%,rgba(11,45,66,.7) 45%,rgba(14,118,181,.4) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:clamp(3.5rem,8vw,6rem);padding-bottom:clamp(4.5rem,9vw,6.5rem);
+  min-height:clamp(30rem,62vh,42rem);display:flex;flex-direction:column;justify-content:center;max-width:1180px}
+.hero-dots{position:absolute;left:0;right:0;bottom:1.5rem;z-index:3;display:flex;gap:.6rem;justify-content:center}
+.hero-dots button{width:9px;height:9px;padding:0;border:0;border-radius:50%;cursor:pointer;
+  background:rgba(255,255,255,.45);transition:background .3s,transform .3s}
+.hero-dots button.active{background:#fff;transform:scale(1.25)}
+.hero .badge-line{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-head);font-weight:600;
+  font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:#bfe0f2;margin-bottom:1.2rem}
+.hero h1{color:#fff;font-size:clamp(2.1rem,5vw,3.7rem);font-weight:800;line-height:1.12;max-width:18ch}
+.hero p{margin-top:1.3rem;max-width:56ch;font-size:clamp(1rem,1.5vw,1.15rem);color:rgba(255,255,255,.9);line-height:1.7}
+.hero-actions{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+/* ---------- BADGES ---------- */
+.badges{background:#fff;margin-top:-3.2rem;position:relative;z-index:5}
+.badges .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+@media(max-width:820px){.badges .wrap{grid-template-columns:1fr}.badges{margin-top:-2rem}}
+.badge{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.6rem;
+  display:flex;align-items:center;gap:1.1rem;box-shadow:0 20px 40px -30px rgba(8,42,66,.4)}
+.badge .bic{flex-shrink:0;width:52px;height:52px;border-radius:12px;background:var(--sage);
+  display:flex;align-items:center;justify-content:center;color:var(--green-d)}
+.badge .bic svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.8}
+.badge b{display:block;font-family:var(--font-head);font-weight:700;font-size:1.05rem;color:var(--ink)}
+.badge span{display:block;font-size:.86rem;color:var(--muted)}
+
+/* ---------- INTRO / ABOUT ---------- */
+.about .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+@media(max-width:860px){.about .wrap{grid-template-columns:1fr;gap:2rem}}
+.about h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:.7rem 0 1.1rem;font-weight:700}
+.about h2 span{color:var(--green-d)}
+.about p{margin-bottom:1.1rem;color:var(--ink-2)}
+.checks{margin-top:1.3rem;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+@media(max-width:520px){.checks{grid-template-columns:1fr}}
+.checks li{display:flex;gap:.6rem;align-items:flex-start;font-weight:500;color:var(--ink)}
+.checks svg{flex-shrink:0;width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:2;margin-top:.15rem}
+.about-media{position:relative;border-radius:18px;overflow:hidden;min-height:clamp(18rem,40vw,26rem);
+  background:url('assets/about.jpg') center/cover no-repeat,linear-gradient(160deg,var(--sage),var(--sage-2));
+  border:1px solid var(--line)}
+.about-media .tag{position:absolute;left:1.2rem;bottom:1.2rem;background:#fff;border-radius:12px;
+  padding:.9rem 1.2rem;box-shadow:0 16px 40px -20px rgba(0,0,0,.35)}
+.about-media .tag b{font-family:var(--font-head);color:var(--green-d);font-size:1.5rem;font-weight:800;display:block}
+.about-media .tag span{font-size:.82rem;color:var(--muted)}
+
+/* ---------- SERVICES (image cards) ---------- */
+.services{background:var(--sage)}
+.services .head{text-align:center;max-width:680px;margin:0 auto clamp(2rem,4vw,3rem)}
+.services h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-top:.6rem}
+.services .head p{margin-top:.8rem;color:var(--ink-2)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:860px){.svc-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+.svc-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 20px 40px -34px rgba(8,42,66,.5);transition:transform .3s ease,box-shadow .3s ease}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 28px 50px -30px rgba(8,42,66,.5)}
+.svc-img{height:180px;background-size:cover;background-position:center;position:relative}
+.svc-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(20,40,14,.15))}
+.svc-1{background-image:url('assets/svc-1.jpg')}
+.svc-2{background-image:url('assets/svc-2.jpg')}
+.svc-3{background-image:url('assets/svc-3.jpg')}
+.svc-body{padding:1.5rem 1.6rem 1.7rem}
+.svc-body h3{font-size:1.28rem;margin-bottom:.6rem}
+.svc-body p{font-size:.95rem;color:var(--ink-2)}
+.svc-body a{margin-top:1rem;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--font-head);
+  font-weight:600;font-size:.9rem;color:var(--green-d)}
+.svc-body a:hover{gap:.7rem;color:var(--green-dd)}
+
+/* ---------- CATEGORY CHIPS ---------- */
+.cats .head{text-align:center;max-width:680px;margin:0 auto clamp(1.6rem,3vw,2.4rem)}
+.cats h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-top:.6rem}
+.chip-row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+.chip{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.3rem;border-radius:40px;
+  border:1.5px solid var(--line);background:#fff;font-family:var(--font-head);font-weight:500;font-size:.95rem;
+  color:var(--ink);transition:border-color .25s,background .25s,color .25s;cursor:default}
+.chip:hover{border-color:var(--green);background:var(--green);color:#fff}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.chip:hover .dot{background:#fff}
+
+/* ---------- GALLERY ---------- */
+.gallery{background:var(--sage)}
+.gallery .head{text-align:center;max-width:680px;margin:0 auto clamp(2rem,4vw,3rem)}
+.gallery h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-top:.6rem}
+.gallery .head p{margin-top:.8rem;color:var(--ink-2)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+@media(max-width:900px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+.gal-item{position:relative;border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--line);
+  aspect-ratio:3/4;box-shadow:0 16px 34px -28px rgba(8,42,66,.5)}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gal-item:hover img{transform:scale(1.06)}
+
+/* ---------- CTA BAND ---------- */
+.cta{background:linear-gradient(120deg,var(--green-dd),var(--green));color:#fff;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;
+  background:rgba(255,255,255,.08)}
+.cta .wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;padding-top:clamp(2.6rem,5vw,3.6rem);padding-bottom:clamp(2.6rem,5vw,3.6rem)}
+.cta h2{color:#fff;font-size:clamp(1.7rem,3.6vw,2.6rem);max-width:20ch}
+.cta p{margin-top:.7rem;color:rgba(255,255,255,.9);max-width:52ch}
+
+/* ---------- COOPERATION / VISION ---------- */
+.coop .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+@media(max-width:860px){.coop .wrap{grid-template-columns:1fr;gap:2rem}}
+.coop h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:.6rem 0 1rem}
+.coop p{color:var(--ink-2);margin-bottom:1rem}
+.vm-cards{display:grid;gap:1.2rem}
+.vm-card{background:var(--sage);border-radius:16px;padding:1.6rem 1.7rem}
+.vm-card h3{font-size:1.3rem;color:var(--green-dd);margin-bottom:.5rem}
+.vm-card p{margin:0;color:var(--ink-2)}
+.vm-card ul{margin:.6rem 0 0;padding-left:1.1rem;color:var(--ink-2)}
+.vm-card li{margin-bottom:.35rem}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--sage)}
+.contact .wrap{max-width:980px;text-align:center}
+.contact-head{max-width:640px;margin:0 auto}
+.contact h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:.6rem 0 1rem}
+.contact .lead{color:var(--ink-2)}
+.contact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin:2.4rem 0 2.2rem;text-align:left}
+@media(max-width:760px){.contact-cards{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+.ccard{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;color:inherit;
+  box-shadow:0 18px 40px -32px rgba(8,42,66,.55);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+a.ccard:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:0 28px 48px -28px rgba(8,42,66,.45)}
+.ccard .ic{display:flex;width:48px;height:48px;border-radius:50%;background:var(--sage);align-items:center;justify-content:center;color:var(--green-d);margin-bottom:1rem}
+.ccard .ic svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8}
+.ccard b{display:block;font-family:var(--font-head);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.ccard .val{display:block;font-size:1.06rem;font-weight:500;color:var(--ink);line-height:1.5;word-break:break-word}
+a.ccard:hover .val{color:var(--green-d)}
+.cta-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.cinfo .ic{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:#fff;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;color:var(--green-d)}
+.cinfo .ic svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8}
+.cinfo b{display:block;font-family:var(--font-head);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.1rem}
+.cinfo a,.cinfo span{color:var(--ink);font-size:1.02rem}
+.cinfo a:hover{color:var(--green-d)}
+.form{background:#fff;border-radius:18px;padding:clamp(1.6rem,3.5vw,2.4rem);border:1px solid var(--line);
+  box-shadow:0 30px 60px -40px rgba(8,42,66,.5)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:520px){.form-row{grid-template-columns:1fr}}
+.field{margin-bottom:1rem}
+.field label{display:block;font-family:var(--font-head);font-weight:500;font-size:.82rem;color:var(--ink);margin-bottom:.35rem}
+.field input,.field textarea,.field select{width:100%;background:var(--sage);border:1px solid var(--line);
+  border-radius:9px;padding:.8rem .95rem;color:var(--ink);font-family:var(--font-body);font-size:.98rem;transition:border-color .25s,background .25s}
+.field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green);background:#fff}
+.field textarea{resize:vertical;min-height:110px}
+.field select{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%230B4F79' stroke-width='1.8'%3E%3Cpath d='M3 5l4 4 4-4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center}
+.form .btn{width:100%;justify-content:center;margin-top:.3rem}
+.form-ok{display:none;margin-top:1rem;padding:.9rem;border-radius:10px;background:var(--sage);border:1px solid var(--green);color:var(--green-dd);text-align:center;font-weight:500}
+.form-ok.show{display:block}
+.form-note{margin-top:.9rem;font-size:.8rem;color:var(--muted)}
+
+/* ---------- SPONSOR ---------- */
+.sponsor{background:var(--paper)}
+.sponsor-card{display:flex;align-items:center;gap:clamp(1.4rem,3vw,2.4rem);max-width:920px;margin:0 auto;
+  background:linear-gradient(120deg,var(--green-dd),var(--green));color:#fff;border-radius:18px;position:relative;overflow:hidden;
+  padding:clamp(1.8rem,4vw,2.6rem) clamp(1.6rem,4vw,3rem);box-shadow:0 30px 60px -34px rgba(8,42,66,.5)}
+.sponsor-card::after{content:"";position:absolute;right:-50px;bottom:-60px;width:210px;height:210px;border-radius:50%;background:rgba(255,255,255,.08)}
+.sponsor-ic{flex-shrink:0;width:76px;height:76px;border-radius:16px;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.sponsor-ic svg{width:40px;height:40px;stroke:#fff;fill:none;stroke-width:1.5}
+.sponsor-card .txt{position:relative;z-index:1}
+.sponsor-card .eyebrow{color:rgba(255,255,255,.85);font-family:var(--font-head);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+.sponsor-card h3{color:#fff;font-size:clamp(1.4rem,3vw,2.1rem);margin:.35rem 0 .5rem;line-height:1.2}
+.sponsor-card p{color:rgba(255,255,255,.9);margin:0}
+.sponsor-badge{display:inline-block;margin-top:1rem;background:#fff;color:var(--green-dd);font-family:var(--font-head);
+  font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .95rem;border-radius:30px}
+@media(max-width:600px){.sponsor-card{flex-direction:column;text-align:center}}
+
+/* ---------- FOOTER ---------- */
+.footer{background:var(--ink);color:rgba(255,255,255,.72)}
+.footer .wrap{padding-top:clamp(3rem,6vw,4.4rem);padding-bottom:2rem}
+.footer-cols{display:grid;grid-template-columns:1.7fr 1fr 1.4fr;gap:clamp(1.6rem,4vw,3rem)}
+@media(max-width:760px){.footer-cols{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-cols{grid-template-columns:1fr;gap:2rem}}
+.footer .logo{color:#fff}
+.footer .logo small{color:rgba(255,255,255,.5)}
+.footer-tag{margin-top:1rem;font-size:.92rem;line-height:1.7;max-width:36ch}
+.footer h4{color:#fff;font-size:1.05rem;margin-bottom:1.1rem;font-family:var(--font-head)}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.6rem}
+.footer a:hover{color:var(--green)}
+.footer-contact p{margin-bottom:.7rem;font-size:.92rem;line-height:1.6}
+.footer-bottom{margin-top:clamp(2rem,4vw,3rem);padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:space-between;gap:.6rem 1.4rem;flex-wrap:wrap;
+  font-size:.82rem;color:rgba(255,255,255,.5)}
+.footer-made b{color:#fff}.footer-made .lab{color:var(--green)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<!-- ========== TOP BAR ========== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <a href="tel:+4915259868888"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.9.36 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.4c.85.33 1.7.56 2.6.7a2 2 0 0 1 1.6 2z"/></svg><span>Hotline: 0152 59868888</span></a>
+      <a href="mailto:info@germannailsupplies.de"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>info@germannailsupplies.de</span></a>
+    </div>
+    <div class="tb-right">
+      <span data-vi="Giao hàng toàn nước Đức">Lieferung deutschlandweit</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="logo" href="#top"><img class="logo-img" src="assets/logo.jpg" alt="German Nail Supplies"></a>
+    <nav class="nav">
+      <a href="#about" data-vi="Về chúng tôi">Über uns</a>
+      <a href="#services" data-vi="Sản phẩm">Produkte</a>
+      <a href="#gallery" data-vi="Thư viện">Galerie</a>
+      <a href="#commit" data-vi="Cam kết">Versprechen</a>
+      <a href="#vision" data-vi="Tầm nhìn">Vision</a>
+      <a href="#contact" data-vi="Liên hệ">Kontakt</a>
+    </nav>
+    <div class="header-right">
+      <a class="btn btn-green" href="#contact" data-vi="Nhận báo giá">Angebot anfragen</a>
+      <div class="lang-switch" role="group" aria-label="Sprache / Ngôn ngữ">
+        <button type="button" data-lang="de" class="active">DE</button>
+        <button type="button" data-lang="vi">VI</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="top">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hslide is-active" style="background-image:url('assets/hero-1.jpg')"></div>
+    <div class="hslide" style="background-image:url('assets/hero-2.jpg')"></div>
+    <div class="hslide" style="background-image:url('assets/hero-3.jpg')"></div>
+    <div class="hslide" style="background-image:url('assets/hero-4.jpg')"></div>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="badge-line" data-vi="Großhandel cho ngành nail">Großhandel für die Nagelbranche</div>
+    <h1 data-vi="Vật tư nail chất lượng, giao thẳng đến tiệm của bạn">Hochwertige Nagelprodukte direkt in Ihr Studio</h1>
+    <p data-vi="Phụ kiện, mỹ phẩm & thiết bị nail chuẩn EU, giá sỉ. Tư vấn tiếng Việt, giao toàn nước Đức.">Zubehör, Kosmetik & Ausstattung für die Nagelpflege, nach EU-Standard und zu Großhandelspreisen. Beratung auf Vietnamesisch, Lieferung deutschlandweit.</p>
+    <div class="hero-actions">
+      <a class="btn btn-green" href="#services" data-vi="Xem sản phẩm">Produkte entdecken</a>
+      <a class="btn btn-white" href="#contact" data-vi="Liên hệ đặt hàng">Bestellung anfragen</a>
+    </div>
+  </div>
+  <div class="hero-dots" id="heroDots" aria-hidden="true"></div>
+</section>
+
+<!-- ========== BADGES ========== -->
+<section class="badges">
+  <div class="wrap">
+    <div class="badge reveal">
+      <div class="bic"><svg viewBox="0 0 24 24"><rect x="1" y="6" width="14" height="11" rx="1"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+      <div><b data-vi="Giao hàng nhanh">Schneller Lieferservice</b><span data-vi="Giao toàn Đức trong 24 đến 48h">Deutschlandweit in 24 bis 48 h</span></div>
+    </div>
+    <div class="badge reveal">
+      <div class="bic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 9.6C8 19.3 5 15.4 5 11V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><b data-vi="100% hàng chính hãng">100% Originalware</b><span data-vi="Đạt chuẩn an toàn châu Âu">Nach EU-Sicherheitsstandard</span></div>
+    </div>
+    <div class="badge reveal">
+      <div class="bic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linejoin="round"/></svg></div>
+      <div><b data-vi="Hỗ trợ tiếng Việt">Beratung auf Vietnamesisch</b><span data-vi="Trước & sau khi mua">Vor & nach dem Kauf</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal" data-vi="Về chúng tôi">Über uns</span>
+      <h2 class="reveal" data-vi="Người Việt làm nail, <span>chúng tôi hiểu rõ</span>">Wir kennen <span>das Handwerk</span></h2>
+      <p class="reveal" data-vi="Nhà cung cấp cho ngành nail, vận hành bởi chính đội ngũ Nail Gallery Frankfurt. Chúng tôi dùng sản phẩm này mỗi ngày.">Großhändler für die Nagelbranche, betrieben vom Team hinter Nail Gallery Frankfurt. Wir nutzen diese Produkte täglich selbst.</p>
+      <ul class="checks reveal">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Hàng chính hãng, chuẩn EU">Originalware, EU-Standard</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Giá sỉ cho salon">Großhandelspreise</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Luôn sẵn hàng tại Frankfurt">Immer auf Lager in Frankfurt</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Hỗ trợ tận tình tiếng Việt">Beratung auf Vietnamesisch</span></li>
+      </ul>
+    </div>
+    <div class="about-media reveal">
+      <div class="tag"><b>10+</b><span data-vi="Năm kinh nghiệm trong nghề">Jahre Erfahrung im Handwerk</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal" data-vi="Danh mục sản phẩm">Unser Sortiment</span>
+      <h2 class="reveal" data-vi="Mọi thứ cho một tiệm nail">Alles für ein Nagelstudio</h2>
+      <p class="reveal" data-vi="Từ vật tư tiêu hao đến thiết bị đầu tư, tất cả ở một nơi.">Von Verbrauchsmaterial bis zur Ausstattung, alles aus einer Hand.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="svc-img svc-1"></div>
+        <div class="svc-body">
+          <h3 data-vi="Sơn, Gel & Bột">Lacke, Gel & Pulver</h3>
+          <p data-vi="Gel, sơn, bột, builder & dung dịch.">Gel-Polish, Lacke, Pulver, Buildergel & Flüssigkeiten.</p>
+          <a href="#contact" data-vi="Yêu cầu bảng giá →">Preisliste anfragen →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-img svc-2"></div>
+        <div class="svc-body">
+          <h3 data-vi="Máy móc & Thiết bị">Maschinen & Geräte</h3>
+          <p data-vi="Máy mài, đèn UV/LED, ghế spa, bàn & nội thất.">Fräser, UV/LED-Lampen, Spa-Stühle, Tische & Möbel.</p>
+          <a href="#contact" data-vi="Yêu cầu bảng giá →">Preisliste anfragen →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-img svc-3"></div>
+        <div class="svc-body">
+          <h3 data-vi="Vệ sinh & Chăm sóc">Hygiene & Pflege</h3>
+          <p data-vi="Đồ tiêu hao, khử trùng, sản phẩm spa & chăm sóc.">Einwegartikel, Desinfektion, Spa- & Pflegeprodukte.</p>
+          <a href="#contact" data-vi="Yêu cầu bảng giá →">Preisliste anfragen →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CATEGORY CHIPS ========== -->
+<section class="section cats">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal" data-vi="Nhóm sản phẩm">Kategorien</span>
+      <h2 class="reveal" data-vi="Tìm đúng thứ bạn cần">Finden Sie genau das Richtige</h2>
+    </div>
+    <div class="chip-row reveal">
+      <span class="chip"><span class="dot"></span><span data-vi="Sơn Gel">Gel-Lacke</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Bột & Dung dịch">Pulver & Flüssigkeiten</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Builder Gel">Buildergel</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Máy & Đèn">Maschinen & Lampen</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Trang trí">Deko & Nail-Art</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Spa & Chăm sóc">Spa & Pflege</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Vệ sinh & Tiêu hao">Hygiene & Verbrauch</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="Nội thất Salon">Studio-Möbel</span></span>
+      <span class="chip"><span class="dot"></span><span data-vi="BST G.N.S">G.N.S Kollektion</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== GALLERY ========== -->
+<section class="section gallery" id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal" data-vi="Thư viện">Galerie</span>
+      <h2 class="reveal" data-vi="Sản phẩm & thiết bị của chúng tôi">Unsere Produkte & Ausstattung</h2>
+      <p class="reveal" data-vi="Ghế spa, bàn nail, dụng cụ và nhiều hơn.">Spa-Stühle, Nageltische, Werkzeuge und mehr.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item reveal"><img src="assets/gal-01.jpg" loading="lazy" alt="G.N.S LED-Nagellampe"></div>
+      <div class="gal-item reveal"><img src="assets/gal-02.jpg" loading="lazy" alt="G.N.S Nagelfeilen"></div>
+      <div class="gal-item reveal"><img src="assets/gal-03.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-04.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-05.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-06.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-07.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-08.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-09.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-10.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
+      <div class="gal-item reveal"><img src="assets/gal-11.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-12.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-13.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-14.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-15.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-16.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-17.jpg" loading="lazy" alt="Nageltisch"></div>
+      <div class="gal-item reveal"><img src="assets/gal-18.jpg" loading="lazy" alt="Empfangs- & Trockenstation"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BAND ========== -->
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <h2 data-vi="Nguồn hàng từ khắp nơi, giao khắp nước Đức">Waren aus aller Welt, geliefert in ganz Deutschland</h2>
+      <p data-vi="Bạn cần gì cũng có, giá tốt.">Alles, was Sie brauchen, zu Top-Preisen.</p>
+    </div>
+    <a class="btn btn-white" href="#contact" data-vi="Yêu cầu ngay">Jetzt anfragen</a>
+  </div>
+</section>
+
+<!-- ========== COOPERATION / VISION ========== -->
+<section class="section coop" id="commit">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow reveal" data-vi="Hợp tác">Zusammenarbeit</span>
+      <h2 class="reveal" data-vi="Đối tác đáng tin cho tiệm của bạn">Ein verlässlicher Partner für Ihr Studio</h2>
+      <p class="reveal" data-vi="Dịch vụ tốt, giá hợp lý, hàng luôn sẵn:">Bester Service, faire Preise, Sortiment immer verfügbar:</p>
+      <ul class="checks reveal" style="grid-template-columns:1fr">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Sơn, gel, bột & dung dịch cho mọi kỹ thuật đắp móng">Lacke, Gel, Pulver & Flüssigkeiten für jede Modellage</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Máy mài, đèn, thiết bị & nội thất salon">Fräser, Lampen, Geräte & Studio-Möbel</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-vi="Đồ tiêu hao, vệ sinh & sản phẩm chăm sóc spa">Verbrauchs-, Hygiene- & Spa-Pflegeprodukte</span></li>
+      </ul>
+    </div>
+    <div id="vision" class="vm-cards reveal">
+      <div class="vm-card">
+        <h3 data-vi="Tầm nhìn">Vision</h3>
+        <p data-vi="Nguồn cung số một cho ngành nail Việt tại Đức.">Der führende Zulieferer für die vietnamesische Nagelbranche in Deutschland.</p>
+      </div>
+      <div class="vm-card">
+        <h3 data-vi="Sứ mệnh">Mission</h3>
+        <p data-vi="Lo phần vật tư để bạn tập trung vào tay nghề.">Wir übernehmen die Materiallogistik, damit Sie sich aufs Handwerk konzentrieren.</p>
+        <ul>
+          <li data-vi="Chất lượng đặt lên hàng đầu, không thỏa hiệp.">Qualität an erster Stelle, ohne Kompromisse.</li>
+          <li data-vi="Đồng hành cùng cộng đồng người Việt xa nhà.">An der Seite der vietnamesischen Community.</li>
+          <li data-vi="Minh bạch trong giá cả và cam kết.">Transparenz bei Preisen und Zusagen.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SPONSOR ========== -->
+<section class="section sponsor" id="sponsor">
+  <div class="wrap">
+    <div class="sponsor-card reveal">
+      <div class="sponsor-ic"><svg viewBox="0 0 24 24"><ellipse cx="9" cy="8.5" rx="5.5" ry="6.5"/><path d="M6.4 14.4 5 21M10 15l-1 6" stroke-linecap="round"/><circle cx="17.5" cy="15.5" r="3"/></svg></div>
+      <div class="txt">
+        <span class="eyebrow" data-vi="Tài trợ">Sponsoring</span>
+        <h3 data-vi="G.N.S hân hạnh là nhà tài trợ giải Pickleball VGP">G.N.S ist stolzer Sponsor des VGP Pickleball-Turniers</h3>
+        <p data-vi="Chúng tôi tự hào đồng hành cùng cộng đồng, trên sân và ngoài đời.">Wir unterstützen die Community mit Stolz, auf und neben dem Platz.</p>
+        <span class="sponsor-badge" data-vi="Nhà tài trợ chính thức">Offizieller Sponsor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="contact-head">
+      <span class="eyebrow reveal" data-vi="Liên hệ">Kontakt</span>
+      <h2 class="reveal" data-vi="Cần vật tư? Gọi chúng tôi.">Material gefällig? Rufen Sie an.</h2>
+      <p class="lead reveal" data-vi="Một cuộc gọi hoặc tin nhắn, chúng tôi báo giá ngay.">Ein Anruf oder eine Nachricht genügt, wir melden uns mit einem Angebot.</p>
+    </div>
+    <div class="contact-cards reveal">
+      <a class="ccard" href="tel:+4915259868888">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.9.36 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.4c.85.33 1.7.56 2.6.7a2 2 0 0 1 1.6 2z"/></svg></span>
+        <b>Telefon / WhatsApp</b>
+        <span class="val">0152 59868888</span>
+      </a>
+      <a class="ccard" href="mailto:info@germannailsupplies.de">
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+        <b>E-Mail</b>
+        <span class="val">info@germannailsupplies.de</span>
+      </a>
+      <div class="ccard">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <b data-vi="Địa chỉ">Adresse</b>
+        <span class="val">Philipp-Reis-Straße 7<br>63303 Dreieich-Sprendlingen</span>
+      </div>
+    </div>
+    <div class="cta-actions reveal">
+      <a class="btn btn-green" href="tel:+4915259868888" data-vi="Gọi ngay">Jetzt anrufen</a>
+      <a class="btn btn-outline" href="https://wa.me/4915259868888" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-outline" href="https://www.instagram.com/germannailsupplies/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div>
+        <a class="logo" href="#top"><img class="logo-img footer-logo-img" src="assets/logo.jpg" alt="German Nail Supplies"></a>
+        <p class="footer-tag" data-vi="Vật tư & thiết bị nail, giao toàn nước Đức.">Zubehör & Ausstattung für die Nagelpflege, Lieferung deutschlandweit.</p>
+      </div>
+      <div>
+        <h4 data-vi="Liên kết">Menü</h4>
+        <ul>
+          <li><a href="#about" data-vi="Về chúng tôi">Über uns</a></li>
+          <li><a href="#services" data-vi="Sản phẩm">Produkte</a></li>
+          <li><a href="#commit" data-vi="Hợp tác">Zusammenarbeit</a></li>
+          <li><a href="#vision" data-vi="Tầm nhìn">Vision</a></li>
+          <li><a href="#contact" data-vi="Liên hệ">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-vi="Kết nối">Kontakt</h4>
+        <p>Philipp-Reis-Straße 7<br>63303 Dreieich-Sprendlingen</p>
+        <p><a href="tel:+4915259868888">0152 59868888</a><br><a href="mailto:info@germannailsupplies.de">info@germannailsupplies.de</a></p>
+        <p><a href="https://www.instagram.com/germannailsupplies/" target="_blank" rel="noopener">Instagram: @germannailsupplies</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 German Nail Supplies</span>
+      <a href="impressum.html">Impressum</a>
+      <a class="footer-made" href="https://tuttylab.vn/" target="_blank" rel="noopener">Made by <b>Tutty<span class="lab">Lab</span></b></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---- language switch (DE default, VI toggle) ---- */
+  (function(){
+    const nodes=[...document.querySelectorAll('[data-vi]')];
+    nodes.forEach(el=>el._de=el.innerHTML);
+    const phs=[...document.querySelectorAll('[data-vi-ph]')];
+    phs.forEach(el=>el._de=el.getAttribute('placeholder')||'');
+    const btns=[...document.querySelectorAll('.lang-switch button')];
+    function apply(l){
+      document.documentElement.lang=l;
+      nodes.forEach(el=>el.innerHTML = l==='vi' ? el.getAttribute('data-vi') : el._de);
+      phs.forEach(el=>el.setAttribute('placeholder', l==='vi' ? el.getAttribute('data-vi-ph') : el._de));
+      btns.forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+      try{localStorage.setItem('gns-lang',l)}catch(e){}
+    }
+    let saved='de'; try{saved=localStorage.getItem('gns-lang')||'de'}catch(e){}
+    apply(saved);
+    btns.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.lang)));
+  })();
+
+  /* ---- reveal ---- */
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%3,2)*80)+'ms';io.observe(el)});
+
+  /* ---- header shadow ---- */
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>10);
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* ---- hero carousel ---- */
+  (function(){
+    const slides=[...document.querySelectorAll('#heroSlides .hslide')];
+    const dotsWrap=document.getElementById('heroDots');
+    if(!slides.length||!dotsWrap) return;
+    let idx=0,timer;
+    slides.forEach((s,i)=>{const b=document.createElement('button');b.setAttribute('aria-label','Bild '+(i+1));
+      if(i===0)b.classList.add('active');b.addEventListener('click',()=>go(i));dotsWrap.appendChild(b);});
+    const dots=[...dotsWrap.children];
+    function go(n){idx=(n+slides.length)%slides.length;
+      slides.forEach((s,i)=>s.classList.toggle('is-active',i===idx));
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));restart();}
+    function restart(){clearInterval(timer);timer=setInterval(()=>go(idx+1),5000);}
+    restart();
+  })();
+
+  /* ---- contact form (front-end only, cần nối backend/email sau) ---- */
+  const form=document.getElementById('contactForm');
+  if(form){form.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+    document.getElementById('formOk').classList.add('show');
+    form.reset();
+  });}
+</script>
+</body>
+</html>
