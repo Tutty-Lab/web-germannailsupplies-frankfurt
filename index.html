@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>German Nail Supplies · Frankfurt</title>
+<link rel="canonical" href="https://germannailsupplies.de/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/favicon.png">
 <meta name="description" content="German Nail Supplies (G.N.S), Großhändler für Zubehör, Kosmetik und Ausstattung rund um die Nagelpflege. Schnelle Lieferung in ganz Deutschland.">
@@ -145,6 +146,9 @@ h1,h2,h3,h4{font-family:var(--font-head);color:var(--ink);line-height:1.2;font-w
 .svc-1{background-image:url('assets/svc-1.jpg')}
 .svc-2{background-image:url('assets/svc-2.jpg')}
 .svc-3{background-image:url('assets/svc-3.jpg')}
+.svc-lieferung{background-image:url('assets/svc-lieferung.jpg');background-position:center 62%}
+.svc-reparatur{background-image:url('assets/svc-reparatur.jpg');background-position:center 38%}
+.svc-showroom{background-image:url('assets/svc-showroom.jpg');background-position:center 30%}
 .svc-body{padding:1.5rem 1.6rem 1.7rem}
 .svc-body h3{font-size:1.28rem;margin-bottom:.6rem}
 .svc-body p{font-size:.95rem;color:var(--ink-2)}
@@ -252,6 +256,23 @@ a.ccard:hover .val{color:var(--green-d)}
 .sponsor-badge{display:inline-block;margin-top:1rem;background:#fff;color:var(--green-dd);font-family:var(--font-head);
   font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:.42rem .95rem;border-radius:30px}
 @media(max-width:600px){.sponsor-card{flex-direction:column;text-align:center}}
+/* VGP photo mosaic */
+.vgp-head{text-align:center;max-width:680px;margin:0 auto clamp(1.8rem,3.5vw,2.6rem)}
+.vgp-head h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-top:.6rem}
+.vgp-head p{margin-top:.8rem;color:var(--ink-2)}
+.vgp-media{max-width:1080px;margin:clamp(1.8rem,4vw,2.8rem) auto 0}
+.vfig{margin:0;position:relative;border-radius:14px;overflow:hidden;background:var(--sage);
+  border:1px solid var(--line);box-shadow:0 20px 44px -30px rgba(8,42,66,.5)}
+.vfig img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.vfig:hover img{transform:scale(1.05)}
+.vfig figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .95rem .7rem;
+  font-family:var(--font-head);font-weight:600;font-size:.82rem;color:#fff;
+  background:linear-gradient(180deg,rgba(8,34,54,0),rgba(8,34,54,.78))}
+.vfig-feature{aspect-ratio:20/9;margin-bottom:1rem}
+.vgp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.vg-land{aspect-ratio:16/9}
+.vg-sq{aspect-ratio:1/1}
+@media(max-width:600px){.vgp-grid{grid-template-columns:1fr}.vfig-feature{aspect-ratio:16/9}}
 
 /* ---------- FOOTER ---------- */
 .footer{background:var(--ink);color:rgba(255,255,255,.72)}
@@ -300,6 +321,7 @@ a.ccard:hover .val{color:var(--green-d)}
     <nav class="nav">
       <a href="#about" data-vi="Về chúng tôi">Über uns</a>
       <a href="#services" data-vi="Sản phẩm">Produkte</a>
+      <a href="#service" data-vi="Dịch vụ">Service</a>
       <a href="#gallery" data-vi="Thư viện">Galerie</a>
       <a href="#commit" data-vi="Cam kết">Versprechen</a>
       <a href="#vision" data-vi="Tầm nhìn">Vision</a>
@@ -340,15 +362,12 @@ a.ccard:hover .val{color:var(--green-d)}
 <section class="badges">
   <div class="wrap">
     <div class="badge reveal">
-      <div class="bic"><svg viewBox="0 0 24 24"><rect x="1" y="6" width="14" height="11" rx="1"/><path d="M15 9h4l3 3v5h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
       <div><b data-vi="Giao hàng nhanh">Schneller Lieferservice</b><span data-vi="Giao toàn Đức trong 24 đến 48h">Deutschlandweit in 24 bis 48 h</span></div>
     </div>
     <div class="badge reveal">
-      <div class="bic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 9.6C8 19.3 5 15.4 5 11V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div><b data-vi="100% hàng chính hãng">100% Originalware</b><span data-vi="Đạt chuẩn an toàn châu Âu">Nach EU-Sicherheitsstandard</span></div>
     </div>
     <div class="badge reveal">
-      <div class="bic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linejoin="round"/></svg></div>
       <div><b data-vi="Hỗ trợ tiếng Việt">Beratung auf Vietnamesisch</b><span data-vi="Trước & sau khi mua">Vor & nach dem Kauf</span></div>
     </div>
   </div>
@@ -411,6 +430,43 @@ a.ccard:hover .val{color:var(--green-d)}
   </div>
 </section>
 
+<!-- ========== LEISTUNGEN / SERVICE ========== -->
+<section class="section services" id="service" style="background:#fff">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow reveal" data-vi="Dịch vụ">Unser Service</span>
+      <h2 class="reveal" data-vi="Không chỉ bán vật tư">Mehr als nur Nachschub</h2>
+      <p class="reveal" data-vi="Chúng tôi đồng hành cùng tiệm của bạn: giao hàng, sửa chữa thiết bị và tư vấn tại showroom.">Wir begleiten Ihr Studio: Lieferung, Gerätereparatur und Beratung im Showroom.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal">
+        <div class="svc-img svc-lieferung"></div>
+        <div class="svc-body">
+          <h3 data-vi="Giao hàng toàn nước Đức">Lieferung deutschlandweit</h3>
+          <p data-vi="Đội xe giao hàng riêng, đơn của bạn đến nơi trong 24 đến 48 giờ.">Eigener Lieferservice, Ihre Bestellung ist in 24 bis 48 Stunden bei Ihnen.</p>
+          <a href="#contact" data-vi="Đặt hàng ngay →">Jetzt bestellen →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-img svc-reparatur"></div>
+        <div class="svc-body">
+          <h3 data-vi="Sửa chữa & bảo trì">Reparatur & Wartung</h3>
+          <p data-vi="Máy mài, đèn hay thiết bị bị hỏng? Chúng tôi sửa chữa và bảo trì cho bạn.">Fräser, Lampen oder Geräte defekt? Wir reparieren und warten Ihre Ausstattung.</p>
+          <a href="#contact" data-vi="Gửi yêu cầu →">Anfrage senden →</a>
+        </div>
+      </article>
+      <article class="svc-card reveal">
+        <div class="svc-img svc-showroom"></div>
+        <div class="svc-body">
+          <h3 data-vi="Showroom & tư vấn">Showroom & Beratung</h3>
+          <p data-vi="Ghé showroom tại Frankfurt, xem tận mắt sản phẩm và được tư vấn tiếng Việt.">Besuchen Sie unseren Showroom in Frankfurt, testen Sie Produkte und lassen Sie sich beraten.</p>
+          <a href="#contact" data-vi="Liên hệ →">Kontakt aufnehmen →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ========== CATEGORY CHIPS ========== -->
 <section class="section cats">
   <div class="wrap">
@@ -441,6 +497,12 @@ a.ccard:hover .val{color:var(--green-d)}
       <p class="reveal" data-vi="Ghế spa, bàn nail, dụng cụ và nhiều hơn.">Spa-Stühle, Nageltische, Werkzeuge und mehr.</p>
     </div>
     <div class="gal-grid">
+      <div class="gal-item reveal"><img src="assets/prod-01.jpg" loading="lazy" alt="G.N.S Gel-Polish Farbkarte, 216 Farben"></div>
+      <div class="gal-item reveal"><img src="assets/prod-02.jpg" loading="lazy" alt="G.N.S Premium Acrylic Liquid, Made in Germany"></div>
+      <div class="gal-item reveal"><img src="assets/prod-03.jpg" loading="lazy" alt="G.N.S Hand & Body Lotion"></div>
+      <div class="gal-item reveal"><img src="assets/prod-04.jpg" loading="lazy" alt="G.N.S Gel-Polish & Super Base Coat"></div>
+      <div class="gal-item reveal"><img src="assets/prod-05.jpg" loading="lazy" alt="Spa- & Pflegeprodukte"></div>
+      <div class="gal-item reveal"><img src="assets/prod-06.jpg" loading="lazy" alt="G.N.S Showroom in Frankfurt"></div>
       <div class="gal-item reveal"><img src="assets/gal-01.jpg" loading="lazy" alt="G.N.S LED-Nagellampe"></div>
       <div class="gal-item reveal"><img src="assets/gal-02.jpg" loading="lazy" alt="G.N.S Nagelfeilen"></div>
       <div class="gal-item reveal"><img src="assets/gal-03.jpg" loading="lazy" alt="Pediküre-Spa-Stuhl"></div>
@@ -509,12 +571,36 @@ a.ccard:hover .val{color:var(--green-d)}
 <section class="section sponsor" id="sponsor">
   <div class="wrap">
     <div class="sponsor-card reveal">
-      <div class="sponsor-ic"><svg viewBox="0 0 24 24"><ellipse cx="9" cy="8.5" rx="5.5" ry="6.5"/><path d="M6.4 14.4 5 21M10 15l-1 6" stroke-linecap="round"/><circle cx="17.5" cy="15.5" r="3"/></svg></div>
       <div class="txt">
         <span class="eyebrow" data-vi="Tài trợ">Sponsoring</span>
-        <h3 data-vi="G.N.S hân hạnh là nhà tài trợ giải Pickleball VGP">G.N.S ist stolzer Sponsor des VGP Pickleball-Turniers</h3>
-        <p data-vi="Chúng tôi tự hào đồng hành cùng cộng đồng, trên sân và ngoài đời.">Wir unterstützen die Community mit Stolz, auf und neben dem Platz.</p>
-        <span class="sponsor-badge" data-vi="Nhà tài trợ chính thức">Offizieller Sponsor</span>
+        <h3 data-vi="G.N.S — nhà tài trợ đồng hành cùng giải Pickleball VGP">G.N.S — Partner des VGP Pickleball-Turniers</h3>
+        <p data-vi="VGP là giải pickleball dành cho cộng đồng người Việt tại châu Âu. G.N.S tự hào đồng hành xuyên suốt 3 mùa giải, trên sân và ngoài đời.">Das VGP ist das Pickleball-Turnier für die vietnamesische Community in Europa. G.N.S begleitet es mit Stolz über drei Saisons, auf und neben dem Platz.</p>
+        <span class="sponsor-badge" data-vi="Đồng hành 3 mùa giải">Partner über 3 Saisons</span>
+      </div>
+    </div>
+
+    <div class="vgp-media reveal">
+      <figure class="vfig vfig-feature">
+        <img src="assets/vgp-group.jpg" loading="lazy" alt="VGP Pickleball-Turnier – Gruppenfoto aller Teilnehmer">
+        <figcaption data-vi="VGP — cộng đồng pickleball người Việt tại châu Âu">VGP — die vietnamesische Pickleball-Community in Europa</figcaption>
+      </figure>
+      <div class="vgp-grid">
+        <figure class="vfig vg-land">
+          <img src="assets/vgp-award-2025.jpg" loading="lazy" alt="VGP 2025 – Siegerehrung mit G.N.S als Sponsor">
+          <figcaption>VGP 2025</figcaption>
+        </figure>
+        <figure class="vfig vg-land">
+          <img src="assets/vgp-2026.jpg" loading="lazy" alt="VGP Tour 2026 – Gruppenfoto mit G.N.S auf dem Sponsorenbanner">
+          <figcaption>VGP Tour 2026</figcaption>
+        </figure>
+        <figure class="vfig vg-sq">
+          <img src="assets/vgp-poster.jpg" loading="lazy" alt="VGP Summer Tour 2026 in Berlin – Turnierplakat">
+          <figcaption data-vi="Summer Tour 2026 · Berlin">Summer Tour 2026 · Berlin</figcaption>
+        </figure>
+        <figure class="vfig vg-sq">
+          <img src="assets/vgp-match.jpg" loading="lazy" alt="VGP – Spieler beim Pickleball-Match">
+          <figcaption data-vi="Trên sân đấu">Auf dem Platz</figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -530,19 +616,16 @@ a.ccard:hover .val{color:var(--green-d)}
     </div>
     <div class="contact-cards reveal">
       <a class="ccard" href="tel:+4915259868888">
-        <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.9.36 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.4c.85.33 1.7.56 2.6.7a2 2 0 0 1 1.6 2z"/></svg></span>
         <b>Telefon / WhatsApp</b>
         <span class="val">0152 59868888</span>
       </a>
       <a class="ccard" href="mailto:info@germannailsupplies.de">
-        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
         <b>E-Mail</b>
         <span class="val">info@germannailsupplies.de</span>
       </a>
       <div class="ccard">
-        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
         <b data-vi="Địa chỉ">Adresse</b>
-        <span class="val">Philipp-Reis-Straße 7<br>63303 Dreieich-Sprendlingen</span>
+        <span class="val">Hansenweg 31<br>60599 Frankfurt am Main</span>
       </div>
     </div>
     <div class="cta-actions reveal">
@@ -573,7 +656,7 @@ a.ccard:hover .val{color:var(--green-d)}
       </div>
       <div class="footer-contact">
         <h4 data-vi="Kết nối">Kontakt</h4>
-        <p>Philipp-Reis-Straße 7<br>63303 Dreieich-Sprendlingen</p>
+        <p>Hansenweg 31<br>60599 Frankfurt am Main</p>
         <p><a href="tel:+4915259868888">0152 59868888</a><br><a href="mailto:info@germannailsupplies.de">info@germannailsupplies.de</a></p>
         <p><a href="https://www.instagram.com/germannailsupplies/" target="_blank" rel="noopener">Instagram: @germannailsupplies</a></p>
       </div>
